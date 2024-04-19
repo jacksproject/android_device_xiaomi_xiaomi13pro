@@ -108,8 +108,6 @@ PRODUCT_PACKAGES += \
 
 AUDIO_HAL_DIR := hardware/qcom-caf/sm8550/audio/primary-hal
 
-TARGET_EXCLUDES_AUDIOFX := true
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_kalama/audio_policy_configuration.xml \
     $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_kalama_qssi/audio_policy_configuration.xml \
@@ -225,10 +223,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml
-
-# Dolby
-PRODUCT_PACKAGES += \
-    XiaomiDolby
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -347,8 +341,7 @@ PRODUCT_PACKAGES += \
     libgui_vendor \
     libsfplugin_ccodec_utils.vendor \
     libstagefrighthw \
-    libpalclient \
-    dolbycodec_shim
+    libpalclient
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
