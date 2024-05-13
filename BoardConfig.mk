@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/xiaomi/xiaomi13
+DEVICE_PATH := device/xiaomi/ishtar
 
 # A/B
 AB_OTA_UPDATER := true
@@ -106,8 +106,8 @@ DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
 DEVICE_FRAMEWORK_MANIFEST_FILE += $(DEVICE_PATH)/configs/vintf/framework_manifest.xml
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_xiaomi13
-TARGET_RECOVERY_DEVICE_MODULES := libinit_xiaomi13
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_ishtar
+TARGET_RECOVERY_DEVICE_MODULES := libinit_ishtar
 
 # Dtb/o
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/dtb/dtbo.img
@@ -130,44 +130,10 @@ BOARD_KERNEL_BASE       := 0x00000000
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
 BOARD_KERNEL_IMAGE_NAME := Image
 
-TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8550
+TARGET_KERNEL_SOURCE := kernel/xiaomi/ishtar
 TARGET_KERNEL_CONFIG := \
     gki_defconfig \
-    vendor/kalama_GKI.config \
-    vendor/fuxi_GKI.config
-
-# Kernel (modules)
-TARGET_KERNEL_EXT_MODULE_ROOT := kernel/xiaomi/sm8550-modules
-TARGET_KERNEL_EXT_MODULES := \
-	qcom/opensource/mmrm-driver \
-	qcom/opensource/mm-drivers/hw_fence \
-	qcom/opensource/mm-drivers/msm_ext_display \
-	qcom/opensource/mm-drivers/sync_fence \
-	qcom/opensource/audio-kernel \
-	qcom/opensource/camera-kernel \
-	qcom/opensource/dataipa/drivers/platform/msm \
-	qcom/opensource/datarmnet/core \
-	qcom/opensource/datarmnet-ext/aps \
-	qcom/opensource/datarmnet-ext/offload \
-	qcom/opensource/datarmnet-ext/shs \
-	qcom/opensource/datarmnet-ext/perf \
-	qcom/opensource/datarmnet-ext/perf_tether \
-	qcom/opensource/datarmnet-ext/sch \
-	qcom/opensource/datarmnet-ext/wlan \
-	qcom/opensource/securemsm-kernel \
-	qcom/opensource/display-drivers/msm \
-	qcom/opensource/eva-kernel \
-	qcom/opensource/video-driver \
-	qcom/opensource/graphics-kernel \
-	qcom/opensource/wlan/platform \
-	qcom/opensource/wlan/qcacld-3.0/.kiwi_v2 \
-	qcom/opensource/bt-kernel \
-	nxp/opensource/driver
-
-BOOT_KERNEL_MODULES := $(strip $(shell cat $(DEVICE_PATH)/modules.load.recovery))
-BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules.load.vendor_dlkm))
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules.load.first_stage))
-BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD  := $(strip $(shell cat $(DEVICE_PATH)/modules.load.recovery))
+    vendor/ishtar_GKI.config
 
 # Lineage Health
 TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
@@ -176,7 +142,7 @@ TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
 BOARD_USES_METADATA_PARTITION := true
 
 # OTA
-TARGET_OTA_ASSERT_DEVICE := fuxi
+TARGET_OTA_ASSERT_DEVICE := ishtar
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 201326592

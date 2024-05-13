@@ -5,6 +5,6 @@
 //
 
 runtime_resource_overlay {
-    name: "SettingsProviderResXiaomi13",
+    name: "SettingsProviderResXiaomi13Pro",
     device_specific: true
 }

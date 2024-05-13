@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#define LOG_TAG "UdfpsHandler.xiaomi13"
+#define LOG_TAG "UdfpsHandler.ishtar"
 
 #include <android-base/logging.h>
 #include <android-base/properties.h>
@@ -211,7 +211,7 @@ class XiaomiSm8550UdfpsHander : public UdfpsHandler {
         lastPressY = y;
 
         /*
-         * On fuxi, the waiting for finger message is not reliably sent...
+         * On Ishtar, the waiting for finger message is not reliably sent...
          * The finger down message is only reliably sent when the screen is turned off, so enable
          * fod_status better late than never.
          */

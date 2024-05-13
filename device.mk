@@ -11,7 +11,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Get non-open-source specific aspects
-$(call inherit-product, vendor/xiaomi/xiaomi13/xiaomi13-vendor.mk)
+$(call inherit-product, vendor/xiaomi/ishtar/ishtar-vendor.mk)
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -105,7 +105,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_kalama/audio_policy_configuration.xml \
     $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_kalama_qssi/audio_policy_configuration.xml \
     $(LOCAL_PATH)/configs/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
-    $(LOCAL_PATH)/configs/audio/bluetooth_hearing_aid_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_hearing_aid_audio_policy_configuration.xml \
+    $(LOCAL_PATH)/configs/audio/bluetooth_qti_hearing_aid_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_hearing_aid_audio_policy_configuration.xml \
     $(LOCAL_PATH)/configs/audio/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
 
 PRODUCT_COPY_FILES += \
@@ -146,8 +146,6 @@ PRODUCT_PACKAGES += \
     android.hardware.cas@1.2-service
 
 # Camera
-$(call inherit-product-if-exists, vendor/xiaomi/camera/miuicamera.mk)
-
 PRODUCT_PACKAGES += \
     android.hardware.camera.common-V1-ndk.vendor \
     android.hardware.camera.device-V1-ndk.vendor \
@@ -406,20 +404,20 @@ PRODUCT_COPY_FILES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    ApertureResxiaomi13 \
-    Xiaomi13CarrierConfigRes \
+    ApertureResxiaomi13pro \
+    Xiaomi13ProCarrierConfigRes \
     FrameworksResCommon \
     FrameworksResTarget \
     SystemUIResCommon \
-    SystemUIResXiaomi13 \
+    SystemUIResXiaomi13Pro \
     SettingsResXiaomi \
     TelecommResCommon \
     TelephonyResCommon \
     WifiResCommon \
     WifiResTarget \
-    FrameworksResXiaomi13 \
-    SettingsProviderResXiaomi13 \
-    SettingsResXiaomi13
+    FrameworksResXiaomi13Pro \
+    SettingsProviderResXiaomi13Pro \
+    SettingsResXiaomi13Pro
 
 # Parts
 #PRODUCT_PACKAGES += \
@@ -463,7 +461,7 @@ PRODUCT_COPY_FILES += \
 
 # Properties
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/properties/odm_fuxi.prop:$(TARGET_COPY_OUT_ODM)/etc/build_fuxi.prop
+    $(LOCAL_PATH)/configs/properties/odm_ishtar.prop:$(TARGET_COPY_OUT_ODM)/etc/build_ishtar.prop
 
 # Protobuf
 PRODUCT_PACKAGES += \
@@ -567,7 +565,7 @@ PRODUCT_COPY_FILES += \
 # Vendor service manager
 PRODUCT_PACKAGES += \
     vndservicemanager
-    
+
 # Verified Boot
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml

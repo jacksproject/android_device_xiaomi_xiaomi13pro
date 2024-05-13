@@ -1,7 +1,7 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_xiaomi13.mk
+    $(LOCAL_DIR)/lineage_ishtar.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_xiaomi13-user \
-    lineage_xiaomi13-userdebug \
-    lineage_xiaomi13-eng
+    lineage_ishtar-user \
+    lineage_ishtar-userdebug \
+    lineage_ishtar-eng

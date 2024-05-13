@@ -1,4 +1,4 @@
 runtime_resource_overlay {
-    name: "ApertureResxiaomi13",
+    name: "ApertureResxiaomi13pro",
     product_specific: true
 }
